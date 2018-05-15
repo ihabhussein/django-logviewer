@@ -1,0 +1,142 @@
+[
+    {
+        "model": "rsyslog.facility",
+        "pk": 0,
+        "fields": {
+            "title": "KERN"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 1,
+        "fields": {
+            "title": "USER"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 2,
+        "fields": {
+            "title": "MAIL"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 3,
+        "fields": {
+            "title": "DAEMON"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 4,
+        "fields": {
+            "title": "AUTH"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 5,
+        "fields": {
+            "title": "SYSLOG"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 6,
+        "fields": {
+            "title": "LPR"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 7,
+        "fields": {
+            "title": "NEWS"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 8,
+        "fields": {
+            "title": "UUCP"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 9,
+        "fields": {
+            "title": "CRON"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 10,
+        "fields": {
+            "title": "AUTHPRIV"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 11,
+        "fields": {
+            "title": "FTP"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 16,
+        "fields": {
+            "title": "LOCAL0"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 17,
+        "fields": {
+            "title": "LOCAL1"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 18,
+        "fields": {
+            "title": "LOCAL2"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 19,
+        "fields": {
+            "title": "LOCAL3"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 20,
+        "fields": {
+            "title": "LOCAL4"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 21,
+        "fields": {
+            "title": "LOCAL5"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 22,
+        "fields": {
+            "title": "LOCAL6"
+        }
+    },
+    {
+        "model": "rsyslog.facility",
+        "pk": 23,
+        "fields": {
+            "title": "LOCAL7"
+        }
+    }
+]
