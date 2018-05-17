@@ -16,6 +16,9 @@
       #changelist table thead th:first-child {width: inherit}
     </style>
   {% endif %}
+  <style>
+  #changelist-filter select {width: 90%; margin-left: 5%;}
+  </style>
 {% endblock %}
 
 {% block extrahead %}
@@ -90,9 +93,4 @@
   <script>
   document.querySelectorAll('#changelist-filter select').forEach(el => el.onchange = () => location.href = el.value);
   </script>
-  <style>
-  #changelist-filter select {
-      width: 90%; margin-left: 5%;
-  }
-  </style>
 {% endblock %}
