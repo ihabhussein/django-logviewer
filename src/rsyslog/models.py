@@ -1,4 +1,4 @@
-from django.db import models, connection
+from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -29,12 +29,5 @@ class Event(models.Model):
 
     @classmethod
     def tags(self):
-        result = []
-        with connection.cursor() as cursor:
-            cursor.execute("""
-                SELECT DISTINCT regexp_replace(tag, '(\[\d+\]|-\d+|):$', '')
-                  FROM rsyslog_event ORDER BY 1;
-                """)
-            for row in cursor.fetchall():
-                result.append(row[0])
-        return result
+        qs = Event.objects.values('tag').distinct().order_by('tag')
+        return [t.tag for t in qs]
