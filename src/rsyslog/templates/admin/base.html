@@ -12,6 +12,14 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}" />
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}" />{% endif %}
+    <style>
+        #django_language {
+            -webkit-appearance: none; -moz-appearance: none; appearance: none;
+            background-color: inherit; color: inherit; border: none;
+            height: 1.5em; padding: 0 0 0 1.6em;
+            background: left / contain no-repeat url({% static 'rsyslog/languageicon-black.jpg' %});
+        }
+    </style>
 {% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
 </head>
@@ -37,7 +45,11 @@
                 <strong>{% firstof user.get_short_name user.get_username %}</strong> /
             {% endblock %}
             {% block userlinks %}
-                {% if LANGUAGES|length > 1 %}
+                {% if user.has_usable_password %}
+                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+                {% endif %}
+                <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+                {% if LANGUAGES|length > 1 %} /
                 <select id="django_language">
                     {% for l in LANGUAGES %}
                     <option value="{{ l.0 }}"{% if l.0 == LANGUAGE_CODE %} selected{% endif %}>{{ l.0|language_name_local }}</option>
@@ -50,16 +62,6 @@
                     };
                 </script>
                 {% endif %}
-                {% if user.is_active and user.is_staff %}
-                    {% url 'django-admindocs-docroot' as docsroot %}
-                    {% if docsroot %}
-                        <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
-                    {% endif %}
-                {% endif %}
-                {% if user.has_usable_password %} /
-                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
-                {% endif %}
-                <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
             {% endblock %}
         </div>
         {% endif %}
