@@ -7,7 +7,7 @@ admin.site.disable_action('delete_selected')
 
 
 class TagListFilter(admin.SimpleListFilter):
-    title = _('Tag')
+    title = _('Program')
     parameter_name = 'tag'
 
     def lookups(self, request, model_admin):
