@@ -30,4 +30,4 @@ class Event(models.Model):
     @classmethod
     def tags(self):
         qs = Event.objects.values('tag').distinct().order_by('tag')
-        return [t.tag for t in qs]
+        return [t['tag'] for t in qs]
