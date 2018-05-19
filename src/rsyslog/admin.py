@@ -25,6 +25,7 @@ class EventAdmin(admin.ModelAdmin):
     list_display = ['time_received', 'tag', 'facility', 'priority', 'message',]
     ordering = ['-id',]
     list_filter = ['time_received', TagListFilter, 'facility', 'priority',]
+    search_fields = ['message',]
 
     def has_add_permission(self, request, obj=None):
         return False
