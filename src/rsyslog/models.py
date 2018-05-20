@@ -23,7 +23,7 @@ class Event(models.Model):
     time_received = models.DateTimeField(_('Time Received'), null=True, db_index=True)
     host = models.CharField(_('Host'), max_length=32, null=True)
     facility = models.ForeignKey(Facility, verbose_name=_('Facility'), on_delete=models.SET_NULL, null=True, db_index=True)
-    priority = models.ForeignKey(Priority, verbose_name=_('Priority'), on_delete=models.SET_NULL, null=True, db_index=True)
+    priority = models.ForeignKey(Priority, verbose_name=_('Severity'), on_delete=models.SET_NULL, null=True, db_index=True)
     message = models.TextField(_('Message'), null=True)
     tag = models.CharField(_('Program'), max_length=32, null=True, db_index=True)
 
